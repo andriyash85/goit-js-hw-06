@@ -13,11 +13,15 @@ const images = [
   },
 ];
 
-const ulRef = document.querySelector(".gallery");
-const arrIm = images.map(img => {
+// const ulRef = document.querySelector(".gallery");
+// const arrIm = images.map(img => {
 
-  return `<li><img src=${img.url} alt=${img.alt} width = "100px"></li>`;
+//   return `<li><img src=${img.url} alt=${img.alt} width = "100px"></li>`;
   
-}).join();
-ulRef.insertAdjacentHTML("beforeend", arrIm);
-console.log(ulRef);
+// }).join();
+// ulRef.insertAdjacentHTML("beforeend", arrIm);
+// console.log(ulRef);
+
+const galleryEl = document.querySelector(`ul`)
+const newImgInLi = images.map((img) => `<li><img src="${img.url}" alt="${img.alt}" width = "100px"></li>`).join("")
+galleryEl.insertAdjacentHTML("beforebegin", newImgInLi)
