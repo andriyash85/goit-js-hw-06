@@ -1,18 +1,12 @@
-const inpRef = document.querySelector("#name-input");
-const nameRef = document.querySelector("#name-output");
-
-const handleInp = () => {
-    // (inpRef.value === ""||" ")?nameRef.textContent = "Anonymous" : nameRef.textContent = inpRef.value;
-
-    
-    if (inpRef.value === "" || " ") {
-        nameRef.textContent = "Anonymous";
-    }
-    else {
-      nameRef.textContent = inpRef.value;
-       
-    }
- };
- inpRef.addEventListener("input", handleInp);
+const input = document.querySelector('#name-input');
+const output = document.querySelector('#name-output');
+const updateValue = function (event) {
+  if (event.target.value.trim() === '') {
+    output.textContent = 'Anonymous';
+    return;
+  }
+  output.textContent = event.target.value;
+};
+input.addEventListener('input', updateValue);
     
 
